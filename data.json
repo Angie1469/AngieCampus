@@ -1,0 +1,16 @@
+{
+    "clients": [
+        {
+            "first_name": "Theodoric",
+            "last_name": "Rivers",
+            "age": 36,
+            "amount": 1.11
+        },
+        {
+            "first_name": "Angie",
+            "last_name": "Santana",
+            "age": 29,
+            "amount": 2.11
+        }
+    ]
+}

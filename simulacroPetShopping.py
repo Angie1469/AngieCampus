@@ -95,7 +95,7 @@ def leerJson():
 
 def escribirJson(data):
     with open("PetShopping.json","w") as file:
-        json.dump(data,file,indent=4)
+        json.dump(data,file,ensure_ascii=False,indent=4)
 
 def CrearNuevaMascota():
     os.system('clear')
@@ -137,8 +137,9 @@ def CrearNuevaMascota():
 
 def MostrarMascotaPorTipo():
     tipo = validarString("Escoja el tipo de mascota:  ")
+    masc=tipo.title()
     for i in Data['pets']:
-        if i['tipo'] == tipo:
+        if i['tipo'] == masc:
             print(i)
      
     
@@ -164,7 +165,14 @@ def ActualizarDatosMascota():
 
 
 def EliminarMascota():
-    eliminar = validarString("Que mascota desea eliminar?")
+    cont = 1
+    for n in Data['pets']:
+        print (cont,n['tipo']," ---> ", n['raza']," ---> ",n['talla']," ---> ",n['precio']," ---> ",n['servicios']) 
+        cont +=1
+ 
+    eliminar = validarEntero("Que mascota desea eliminar?")
+    Data['pets'].pop(eliminar-1)
+    print(Data)
 
 def menu():
     seguir = True
@@ -196,3 +204,4 @@ def menu():
 Data = {}
 Data = leerJson()
 menu()
+escribirJson(Data)

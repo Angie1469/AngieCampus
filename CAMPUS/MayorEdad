@@ -1,0 +1,20 @@
+Nombres = []
+Edades = []
+
+while True:
+    nombre = input("Ingrese el nombre del estudiante: ")
+    if nombre == "*":
+        break
+    edad = int(input("Ingrese la edad del estudiante:"))
+    Nombres.append(nombre)
+    Edades.append(edad)
+
+for i,edad in enumerate(Edades):
+     if edad > 17:
+         print(f"El nombre es: {Nombres[i]} y su edad es: {edad}")
+
+
+
+    
+
+
